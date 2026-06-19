@@ -33,17 +33,18 @@ export function CrudPanel<T extends { id: string }>({ table, queryKey, fields, c
     queryFn: async () => {
       const { data, error } = await supabase.from(table).select("*").order(orderBy);
       if (error) throw error;
-      return data as T[];
+      return data as unknown as T[];
     },
   });
 
   const upsert = useMutation({
     mutationFn: async (row: Partial<T> & { id?: string }) => {
       if (row.id) {
-        const { error } = await supabase.from(table).update(row).eq("id", row.id);
+        const { id, ...rest } = row;
+        const { error } = await (supabase.from(table) as unknown as { update: (v: unknown) => { eq: (k: string, v: string) => Promise<{ error: Error | null }> } }).update(rest).eq("id", id);
         if (error) throw error;
       } else {
-        const { error } = await supabase.from(table).insert(row as never);
+        const { error } = await (supabase.from(table) as unknown as { insert: (v: unknown) => Promise<{ error: Error | null }> }).insert(row);
         if (error) throw error;
       }
     },
