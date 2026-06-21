@@ -16,7 +16,7 @@ export type Field = {
 };
 
 type Props<T extends { id: string }> = {
-  table: "projects" | "team_members" | "youtube_videos" | "testimonials";
+  table: "projects" | "team_members" | "youtube_videos" | "testimonials" | "services" | "orders" | "membership_plans" | "coupons";
   queryKey: string;
   fields: Field[];
   columns: { key: keyof T | string; label: string; render?: (row: T) => React.ReactNode }[];
