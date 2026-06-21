@@ -1,11 +1,15 @@
 import { Link, Outlet, useNavigate, useRouterState } from "@tanstack/react-router";
 import { useEffect, useState, type ReactNode } from "react";
-import { Leaf, LogOut, LayoutDashboard, FolderKanban, Users, Youtube, MessageSquare, Mail, Loader2 } from "lucide-react";
+import { Leaf, LogOut, LayoutDashboard, FolderKanban, Users, Youtube, MessageSquare, Mail, Loader2, ShoppingBag, Package, Crown, Tag } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { useQueryClient } from "@tanstack/react-query";
 
 const nav = [
   { to: "/admin", label: "Dashboard", icon: LayoutDashboard },
+  { to: "/admin/services", label: "Services", icon: ShoppingBag },
+  { to: "/admin/orders", label: "Orders", icon: Package },
+  { to: "/admin/memberships", label: "Memberships", icon: Crown },
+  { to: "/admin/coupons", label: "Coupons", icon: Tag },
   { to: "/admin/projects", label: "Projects", icon: FolderKanban },
   { to: "/admin/team", label: "Team", icon: Users },
   { to: "/admin/videos", label: "YouTube", icon: Youtube },
