@@ -78,14 +78,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
+      { title: "Creative Web Boost" },
+      { name: "description", content: "CreativeWebBoost is a modern web development and CMS solutions agency dedicated to building high-performance, visually stunning, and business-focused websites." },
       { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { property: "og:title", content: "Creative Web Boost" },
+      { property: "og:description", content: "CreativeWebBoost is a modern web development and CMS solutions agency dedicated to building high-performance, visually stunning, and business-focused websites." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "Creative Web Boost" },
+      { name: "twitter:description", content: "CreativeWebBoost is a modern web development and CMS solutions agency dedicated to building high-performance, visually stunning, and business-focused websites." },
+      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/6vC5d8TRdtdWfAghIzgR5UcrC3G2/social-images/social-1782067415283-ChatGPT_Image_Jun_22,_2026,_12_42_17_AM.webp" },
+      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/6vC5d8TRdtdWfAghIzgR5UcrC3G2/social-images/social-1782067415283-ChatGPT_Image_Jun_22,_2026,_12_42_17_AM.webp" },
     ],
     links: [
       {
