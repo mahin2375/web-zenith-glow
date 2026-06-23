@@ -12,6 +12,7 @@ export type Field = {
   type: FieldType;
   required?: boolean;
   options?: string[];
+  optionLabels?: Record<string, string>;
   placeholder?: string;
 };
 
