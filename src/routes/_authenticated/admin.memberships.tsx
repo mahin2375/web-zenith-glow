@@ -36,7 +36,7 @@ function AdminMembershipsPage() {
           { key: "tier", label: "Tier" },
           { key: "price_cents", label: "Price ¢" },
           { key: "discount_pct", label: "Discount %" },
-          { key: "active", label: "Active", render: (r) => ((r as { active: boolean }).active ? "Yes" : "No") },
+          { key: "active", label: "Active", render: (r) => ((r as unknown as { active: boolean }).active ? "Yes" : "No") },
         ]}
         defaultRow={{ active: true, interval: "month", sort_order: 0, discount_pct: 0, benefits: [] }}
       />
