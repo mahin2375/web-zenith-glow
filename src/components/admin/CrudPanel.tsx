@@ -175,7 +175,7 @@ function EditDialog({ initial, fields, onClose, onSave, saving, title }: {
                   className="w-full rounded-xl border border-foreground/10 bg-background px-4 py-3 outline-none focus:border-primary"
                 >
                   <option value="">Select…</option>
-                  {f.options?.map((o) => <option key={o}>{o}</option>)}
+                  {f.options?.map((o) => <option key={o} value={o}>{f.optionLabels?.[o] ?? o}</option>)}
                 </select>
               ) : f.type === "tags" ? (
                 <input
