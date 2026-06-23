@@ -12,11 +12,12 @@ export type Field = {
   type: FieldType;
   required?: boolean;
   options?: string[];
+  optionLabels?: Record<string, string>;
   placeholder?: string;
 };
 
 type Props<T extends { id: string }> = {
-  table: "projects" | "team_members" | "youtube_videos" | "testimonials" | "services" | "orders" | "membership_plans" | "coupons";
+  table: "projects" | "team_members" | "youtube_videos" | "testimonials" | "services" | "orders" | "membership_plans" | "coupons" | "categories" | "service_packages";
   queryKey: string;
   fields: Field[];
   columns: { key: keyof T | string; label: string; render?: (row: T) => React.ReactNode }[];
@@ -174,7 +175,7 @@ function EditDialog({ initial, fields, onClose, onSave, saving, title }: {
                   className="w-full rounded-xl border border-foreground/10 bg-background px-4 py-3 outline-none focus:border-primary"
                 >
                   <option value="">Select…</option>
-                  {f.options?.map((o) => <option key={o}>{o}</option>)}
+                  {f.options?.map((o) => <option key={o} value={o}>{f.optionLabels?.[o] ?? o}</option>)}
                 </select>
               ) : f.type === "tags" ? (
                 <input
